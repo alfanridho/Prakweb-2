@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\InputController;
+use App\Http\Controllers\FormInputController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/salam', function () {
     return "halo gan";
@@ -37,3 +38,10 @@ Route::get('/nf', function () {
 Route::get('/pemeriksaan', function () {
     return view('pemeriksaan');
 });
+
+Route::get('/', [InputController::class, 'index']);
+
+Route::post('output', [InputController::class, 'output']);
+
+Route::get('/form', [FormInputController::class, 'index']);
+Route::post('/form', [FormInputController::class, 'form']);
