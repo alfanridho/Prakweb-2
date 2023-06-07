@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pesanan;
 use Illuminate\Http\Request;
-use App\Models\Produk;
 
-class ProdukController extends Controller
+class PesananController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $produk = new Produk();
-        return view('admin.produk.produk', ['produk' => $produk->tampil()]);
+        $pesanan = new Pesanan();
+        return view('admin.produk.pesanan', ['pesanan' => $pesanan->tampil()]);
     }
 
     /**
@@ -35,7 +35,7 @@ class ProdukController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Pesanan $pesanan)
     {
         //
     }
@@ -43,7 +43,7 @@ class ProdukController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Pesanan $pesanan)
     {
         //
     }
@@ -51,7 +51,7 @@ class ProdukController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Pesanan $pesanan)
     {
         //
     }
@@ -59,7 +59,7 @@ class ProdukController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Pesanan $pesanan)
     {
         //
     }

@@ -7,6 +7,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\KategoriProdukController;
+use App\Http\Controllers\PesananController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,6 +56,8 @@ Route::post('/form', [FormInputController::class, 'form']);
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/produk', [ProdukController::class, 'index']);
+    Route::get('/kategori_produk', [KategoriProdukController::class, 'index']);
+    Route::get('/pesanan', [PesananController::class, 'index']);
 });
 
 // Route untuk tampilan frontend

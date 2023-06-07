@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Produk;
+use App\Models\KategoriProduk;
 
-class ProdukController extends Controller
+class KategoriProdukController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $produk = new Produk();
-        return view('admin.produk.produk', ['produk' => $produk->tampil()]);
+        $kategori_produk = new KategoriProduk();
+        return view('admin.produk.kategori_produk', ['kategori_produk' => $kategori_produk->tampil()]);
     }
 
     /**
