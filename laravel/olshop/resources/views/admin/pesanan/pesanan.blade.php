@@ -9,6 +9,9 @@
                         </ol>
                         <div class="card mb-4">
                             <div class="card-header">
+                                <a href="{{ url('admin/pesanan/create') }}" class="btn btn-primary">Tambah Data</a>
+                             </div>
+                            <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 Data Pesanan
                             </div>
@@ -25,6 +28,7 @@
                                            <th>Jumlah Pesanan</th>
                                            <th>Deskripsi</th>
                                            <th>Nama Produk</th>
+                                           <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -42,7 +46,8 @@
                                             <td>{{ $order->jumlah_pesanan }}</td>
                                             <td>{{ $order->deskripsi }}</td>
                                             <td>{{ $order->nama_produk }}</td>
- 
+                                            <td><a href="{{ url('admin/pesanan/edit/'.$order->id) }}" class="btn btn-success">Edit</a></td>
+                                            <td><a href="{{ url('admin/pesanan/delete/'.$order->id) }}" class="btn btn-danger">Delete</a></td>
                                         </tr>
                                         @php
                                             $no++
