@@ -3,6 +3,7 @@
 @section('content')
 <form method="post" action="{{ url('admin/produk/store') }}" enctype="multipart/form-data">
     {{ csrf_field() }}
+    <h4 style="text-align: center">Form Tambah Data</h4>
   <div class="form-group row">
     <label for="kode" class="col-4 col-form-label">Kode</label> 
     <div class="col-8">
