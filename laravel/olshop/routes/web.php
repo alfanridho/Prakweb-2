@@ -58,7 +58,7 @@ Route::get('/form', [FormInputController::class, 'index']);
 Route::post('/form', [FormInputController::class, 'form']);
 
 // ini route tampilan admin
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'peran:admin-manager'], function () {
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index']);
         Route::get('/produk', [ProdukController::class, 'index']);
@@ -82,6 +82,10 @@ Route::group(['middleware' => 'auth'], function () {
 Route::prefix('frontend')->group(function () {
     Route::get('/dashboard', [FrontendController::class, 'index']);
     Route::get('/about', [AboutController::class, 'index']);
+});
+
+Route::get('/frontend', function () {
+    return view('frontend');
 });
 
 Auth::routes();
